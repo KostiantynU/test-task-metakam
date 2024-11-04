@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import '@radix-ui/themes/styles.css';
+import SharedLayout from './layouts/SharedLayout/SharedLayout';
+import { Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import NotFoundPage from './pages/NotFoundPage';
+import ProductsPage from './pages/ProductsPage';
+import ProductDetails from './components/ProductDetails';
+import Basket from './components/Basket';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/product/:productId" element={<ProductDetails />} />
+          <Route path="/basket" element={<Basket />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 
