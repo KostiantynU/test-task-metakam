@@ -24,11 +24,21 @@ const productsSlice = createSlice({
         state.currentBasket.push({ ...action.payload, numInOrder: state.currentBasket.length + 1 });
       }
     },
+    removeOneFromCurrentBasket: (state, action) => {
+      state.currentBasket = state.currentBasket.reduce((acuum, el) => {
+        if (el.id === action.payload) {
+          if (el.quantity >= 2) {
+            return [...acuum, { ...el, quantity: el.quantity - 1 }];
+          } else {
+            return [...acuum];
+          }
+        } else {
+          return [...acuum, el];
+        }
+      }, []);
+    },
     removeFromCurrentBasket: (state, action) => {
       state.currentBasket = state.currentBasket.filter(el => el.id !== action.payload);
-    },
-    updateNumInOrder: state => {
-      state.currentBasket = state.currentBasket.map((el, index) => (el.numInOrder = index + 1));
     },
     clearCurrentBasket: (state, action) => {
       state.currentBasket = [];
@@ -63,5 +73,9 @@ const productsSlice = createSlice({
 
 export { productsSlice };
 
-export const { addToCurrentBasket, removeFromCurrentBasket, updateNumInOrder, clearCurrentBasket } =
-  productsSlice.actions;
+export const {
+  addToCurrentBasket,
+  removeFromCurrentBasket,
+  clearCurrentBasket,
+  removeOneFromCurrentBasket,
+} = productsSlice.actions;

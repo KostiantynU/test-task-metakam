@@ -8,9 +8,10 @@ const HomePage = () => {
       </Heading>
       <ul style={{ margin: '10px', padding: '0 10px' }}>
         <li>
-          I have beend used such technologies like JS, React, React-Redux, React-Router-Dom, Radix
+          I have been used such technologies like JS, React, React-Redux, React-Router-Dom, Radix
           Theme.
         </li>
+        <li>Mobile (max 767px) and desktop (over 768px) screen size is used</li>
         <li>
           I made a product page with list of products from "fake API". This API doesn't support
           pagination.

@@ -1,21 +1,41 @@
-import { AspectRatio, Badge, Box, Card, Flex, Heading, Skeleton, Text } from '@radix-ui/themes';
+import {
+  AspectRatio,
+  Badge,
+  Box,
+  Button,
+  Card,
+  Flex,
+  Heading,
+  Skeleton,
+  Text,
+} from '@radix-ui/themes';
 import { createDescription } from '../../utils/createDescription';
 import { Link, useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectProductsStatus } from '../../store/productsSlice/productsSelectors';
+import { addToCurrentBasket } from '../../store/productsSlice/productsSlice';
 
-const ProductCard = ({
-  el: {
-    id,
-    title,
-    image,
-    category,
-    description,
-    rating: { rate },
-  },
-}) => {
+const ProductCard = ({ el: { id, title, image, category, description, rating, price } }) => {
   const allProductsStatus = useSelector(selectProductsStatus);
   const location = useLocation();
+  const dispatch = useDispatch();
+
+  const handleAddProductToCart = e => {
+    e.preventDefault();
+    e.stopPropagation();
+    dispatch(
+      addToCurrentBasket({
+        id,
+        title,
+        image,
+        category,
+        description,
+        rating,
+        price: Number(price),
+        quantity: 1,
+      })
+    );
+  };
 
   return (
     <li>
@@ -47,8 +67,12 @@ const ProductCard = ({
               </Text>
               <Box>
                 <Text as="p">Rating</Text>
-                <Badge variant="soft">{rate}</Badge>
+                <Badge variant="soft">{rating.rate}</Badge>
               </Box>
+            </Flex>
+            <Flex justify={'between'}>
+              <Text as="p">Price: {price}</Text>
+              <Button onClick={handleAddProductToCart}>Add to cart</Button>
             </Flex>
           </Skeleton>
         </Card>
