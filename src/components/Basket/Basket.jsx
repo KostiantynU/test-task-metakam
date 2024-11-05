@@ -13,7 +13,7 @@ const Basket = () => {
 
   if (!basketInStore || basketInStore.length === 0) {
     return (
-      <Flex minHeight={'60vh'}>
+      <Flex minHeight={'60vh'} px={{ initial: '1', sm: '3' }}>
         <Heading as="h2" size={{ initial: '2', sm: '5' }}>
           Your basket is empty - go to product page and choose!
         </Heading>
