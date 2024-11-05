@@ -7,6 +7,7 @@ import {
   Flex,
   Heading,
   Skeleton,
+  Strong,
   Text,
 } from '@radix-ui/themes';
 import { createDescription } from '../../utils/createDescription';
@@ -71,7 +72,9 @@ const ProductCard = ({ el: { id, title, image, category, description, rating, pr
               </Box>
             </Flex>
             <Flex justify={'between'}>
-              <Text as="p">Price: {price}</Text>
+              <Text as="p">
+                <Strong>Price:</Strong> {price}
+              </Text>
               <Button onClick={handleAddProductToCart}>Add to cart</Button>
             </Flex>
           </Skeleton>
