@@ -2,7 +2,7 @@ import { Box, Heading } from '@radix-ui/themes';
 
 const HomePage = () => {
   return (
-    <Box minHeight={'60vh'}>
+    <Box minHeight={'60vh'} px={{ initial: '1', sm: '3' }}>
       <Heading as="h2" size={{ initial: '5', sm: '8' }}>
         The description
       </Heading>
