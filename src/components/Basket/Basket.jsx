@@ -1,4 +1,4 @@
-import { Button, Flex, Heading, Table } from '@radix-ui/themes';
+import { Box, Button, Flex, Heading, Table } from '@radix-ui/themes';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCurrentBasket } from '../../store/productsSlice/productsSelectors';
 import {
@@ -13,7 +13,7 @@ const Basket = () => {
 
   if (!basketInStore || basketInStore.length === 0) {
     return (
-      <Flex minHeight={'80vh'}>
+      <Flex minHeight={'60vh'}>
         <Heading as="h2" size={{ initial: '2', sm: '5' }}>
           Your basket is empty - go to product page and choose!
         </Heading>
@@ -26,7 +26,7 @@ const Basket = () => {
   };
 
   return (
-    <>
+    <Box minHeight={'60vh'}>
       <Heading as="h2" size={{ initial: '2', sm: '5' }}>
         Your choosen things
       </Heading>
@@ -95,7 +95,7 @@ const Basket = () => {
           </Table.Row>
         </Table.Body>
       </Table.Root>
-    </>
+    </Box>
   );
 };
 
