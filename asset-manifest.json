@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/test-task-metakam/static/css/main.3665ef15.css",
-    "main.js": "/test-task-metakam/static/js/main.30bbaabc.js",
+    "main.js": "/test-task-metakam/static/js/main.e6ced979.js",
     "index.html": "/test-task-metakam/index.html",
     "main.3665ef15.css.map": "/test-task-metakam/static/css/main.3665ef15.css.map",
-    "main.30bbaabc.js.map": "/test-task-metakam/static/js/main.30bbaabc.js.map"
+    "main.e6ced979.js.map": "/test-task-metakam/static/js/main.e6ced979.js.map"
   },
   "entrypoints": [
     "static/css/main.3665ef15.css",
-    "static/js/main.30bbaabc.js"
+    "static/js/main.e6ced979.js"
   ]
 }
