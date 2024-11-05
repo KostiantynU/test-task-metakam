@@ -4,7 +4,11 @@ import NavBar from '../NavBar';
 const HeaderComponent = () => {
   return (
     <header>
-      <Section py={{ initial: '1', sm: '3' }} style={{ backgroundColor: 'var(--olive-a2)' }}>
+      <Section
+        py={{ initial: '1', sm: '3' }}
+        px={{ initial: '1', sm: '3' }}
+        style={{ backgroundColor: 'var(--olive-a2)' }}
+      >
         <Flex justify={'between'}>
           <Heading as="h1" m={0} size={{ initial: '2', sm: '6' }}>
             Created by UKostiantyn

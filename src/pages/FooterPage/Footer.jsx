@@ -4,8 +4,8 @@ const FooterPage = () => {
   return (
     <footer>
       <Section
-        py={{ initial: '1', sm: '5' }}
-        px={{ initial: '1', sm: '5' }}
+        py={{ initial: '1', sm: '3' }}
+        px={{ initial: '1', sm: '3' }}
         style={{ backgroundColor: 'var(--olive-a2)' }}
       >
         <Heading as="h5" size={{ initial: '5', sm: '5' }} mb={{ initial: '1', sm: '3' }}>

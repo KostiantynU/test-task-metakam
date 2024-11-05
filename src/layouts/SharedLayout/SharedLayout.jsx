@@ -9,7 +9,7 @@ const SharedLayout = () => {
       <HeaderComponent />
       <main>
         <Section
-          py={{ initial: '1', sm: '5' }}
+          py={{ initial: '1', sm: '3' }}
           style={{ backgroundColor: 'var(--olive-a2)' }}
           minHeight={{ initial: '60vh', sm: '80vh' }}
         >
